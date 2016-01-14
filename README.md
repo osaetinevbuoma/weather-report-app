@@ -8,7 +8,7 @@
     <li><a href="http://npmjs.org" target="_blank">npm</a></li>
     <li><a href="http://expressjs.com" target="_blank">ExpressJS</a></li>
     <li>Sign Up to <a href="http://openweathermap.org" target="_blank">OpenWeatherMap</a> to get an API key needed for getting weather data
-        See the <code>var url=...</code> code in <code>public/application/app.js</code></li>
+        See the <code>var url=...</code> code in <code>public/javascripts/application/app.js</code></li>
 </ul>
 
 <h2>Running App</h2> <hr />

@@ -6,11 +6,11 @@
     .row
         .col-md-3.details
             p Day
-            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{weatherReportDetails.list[dayIndex].weather[0].icon}}.png')
+            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{(weatherReportDetails.list[dayIndex].weather[0].icon).substring(0, 2)}}d.png')
             | {{weatherReportDetails.list[dayIndex].temp.day}}&#8451. {{weatherReportDetails.list[dayIndex].weather[0].main}}
         .col-md-3.details
             p Morning
-            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{weatherReportDetails.list[dayIndex].weather[0].icon}}.png')
+            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{(weatherReportDetails.list[dayIndex].weather[0].icon).substring(0, 2)}}d.png')
             | {{weatherReportDetails.list[dayIndex].temp.morn}}&#8451. {{weatherReportDetails.list[dayIndex].weather[0].main}}
         .col-md-3.details
             p Evening

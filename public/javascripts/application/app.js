@@ -49,7 +49,6 @@
             $http.jsonp(url).
                 success(function (data, status, headers, config) {
                     $scope.weatherReport = data;
-                    console.log(data);
                     sessionStorage.setItem(data.city.id, JSON.stringify(data)); // cache results
             }).
                 error(function (data, status, headers, config) {

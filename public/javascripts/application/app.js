@@ -38,6 +38,9 @@
 
         // fetch weather report
         $scope.fetchWeatherReport = function (selectedCity) {
+            $scope.loading = "Fetching data, please wait...";
+            $scope.weatherReport = null;
+
             if (!selectedCity) {
                 $scope.weatherReport = [];
                 return;
@@ -50,6 +53,7 @@
                 success(function (data, status, headers, config) {
                     $scope.weatherReport = data;
                     sessionStorage.setItem(data.city.id, JSON.stringify(data)); // cache results
+                    $scope.loading = null;
             }).
                 error(function (data, status, headers, config) {
                     console.log(data);

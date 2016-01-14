@@ -30,3 +30,7 @@
                         td {{report.weather[0].description}}
                         td
                             a(href="#/details/{{weatherReport.city.id}}/{{$index}}") Details
+
+            div
+                h3(align="center")
+                    em(ng-show="loading", ng-bind="loading")

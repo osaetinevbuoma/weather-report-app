@@ -1,0 +1,25 @@
+.col-md-offset-2.col-md-9.col-xs-12
+    h2(align="center") Weather Report Details for {{weatherReportDetails.city.name}}
+    hr
+
+    h3(ng-bind='convertToDate(weatherReportDetails.list[dayIndex].dt)')
+    .row
+        .col-md-3.details
+            p Day
+            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{weatherReportDetails.list[dayIndex].weather[0].icon}}.png')
+            | {{weatherReportDetails.list[dayIndex].temp.day}}&#8451. {{weatherReportDetails.list[dayIndex].weather[0].main}}
+        .col-md-3.details
+            p Morning
+            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{weatherReportDetails.list[dayIndex].weather[0].icon}}.png')
+            | {{weatherReportDetails.list[dayIndex].temp.morn}}&#8451. {{weatherReportDetails.list[dayIndex].weather[0].main}}
+        .col-md-3.details
+            p Evening
+            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{(weatherReportDetails.list[dayIndex].weather[0].icon).substring(0, 2)}}n.png')
+            | {{weatherReportDetails.list[dayIndex].temp.eve}}&#8451. {{weatherReportDetails.list[dayIndex].weather[0].main}}
+        .col-md-3.details
+            p Night
+            img.img-responsive.weather-image(src='http://openweathermap.org/img/w/{{(weatherReportDetails.list[dayIndex].weather[0].icon).substring(0, 2)}}n.png')
+            | {{weatherReportDetails.list[dayIndex].temp.night}}&#8451. {{weatherReportDetails.list[dayIndex].weather[0].main}}
+
+    hr
+    a(href="#/").btn.btn-primary Back

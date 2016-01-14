@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    nav.navbar.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                button.navbar-toggle.collapsed(type="button", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="#") Nigerian Weather Report
+            #navbar.collapse.navbar-collapse
+            // /.nav-collapse
+    .container
+        .starter-template
+            .row(ng-view)
+
+    // /.container
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src="/javascripts/libraries/angular.min.js")
+    script(src="/javascripts/libraries/angular-route.min.js")
+    script(src="/javascripts/application/app.js")

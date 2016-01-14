@@ -1,0 +1,32 @@
+.col-md-3.col-xs-12
+    h2 Select a state
+    form
+        .form-group
+            select.form-control(ng-model="selectedCity", ng-change="fetchWeatherReport(selectedCity)")
+                option(value="") -- Select a state --
+                option(ng-repeat="city in cities", value="{{city.city}}") {{city.state}}
+
+.col-md-9.col-xs-12
+    h2(align="center") Weather Report for the next 7 days
+    h3(align="center") Weather Report for: {{selectedCity}}
+    hr
+
+    .row
+        .col-md-12
+            table.table.table-responsive
+                thead
+                    tr
+                        th Date
+                        th Weather Report
+                        th Description
+                        th
+                tbody
+                    tr(ng-repeat="report in weatherReport.list")
+                        td
+                            span(ng-bind='convertToDate(report.dt)')
+                        td
+                            img.weather-image(src='http://openweathermap.org/img/w/{{report.weather[0].icon}}.png')
+                            | {{report.temp.max}}&#8451. {{report.weather[0].main}}
+                        td {{report.weather[0].description}}
+                        td
+                            a(href="#/details/{{weatherReport.city.id}}/{{$index}}") Details
